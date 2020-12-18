@@ -9,7 +9,7 @@ export const TodoListItem: React.FC<Props> = ({
     toggleTodo
   })=> {
   return (
-    <li>
+    <li className="list-group-item">
       <label
         style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
       >

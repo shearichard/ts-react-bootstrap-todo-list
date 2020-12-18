@@ -19,16 +19,20 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState('');
 
   return (
-    <form>
-      <input 
-        type="text" 
-        value={text}
-        onChange={e => {
-            setText(e.target.value);
-        }}
-      />
+    <form className="form-inline">
+      <div className="form-group  mx-sm-3 mb-2">
+        <input 
+          type="text" 
+          className="form-control"
+          value={text}
+          onChange={e => {
+              setText(e.target.value);
+          }}
+        />
+      </div>
       <button 
         type="submit"
+        className="btn btn-outline-primary mb-2"
         onClick={e => {
           e.preventDefault();
           addTodo(text);

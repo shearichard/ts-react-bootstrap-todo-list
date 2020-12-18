@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TodoList } from './TodoList';
 import { AddTodoForm } from './AddTodoForm';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 const initialTodos: Todo[] = [
@@ -40,10 +41,24 @@ function App() {
     setTodos([...todos, newTodo]);
   };
 
+  /*let customStyle = {
+      'width': '18rem',
+    };*/
  return( 
     <>
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
-        <AddTodoForm addTodo={addTodo} />
+        <div className="container">
+            <div className="card">
+                <div className="card-header">
+                    <h5 className="card-title">Todos using TS/React and Bootstrap</h5>
+                </div>
+                <div className="card-body">
+                    <TodoList todos={todos} toggleTodo={toggleTodo} />
+                </div>
+                <div className="card-footer">
+                    <AddTodoForm addTodo={addTodo} />
+                </div>
+              </div>
+        </div>
     </>
     );
 
